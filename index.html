@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Head of Data Analytics · TNT Growth | Sagan White Glove</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --tnt-blue: #4D65FF;
+            --tnt-blue-soft: #8899FF;
+            --tnt-blue-deep: #3A50E8;
+            --tnt-dark: #1C1F2E;
+            --tnt-darker: #141622;
+            --tnt-darkest: #0E1019;
+            --tnt-white: #FFFFFF;
+            --tnt-light: #F5F6FF;
+            --tnt-gray: #6B7280;
+            --tnt-gray-light: #E5E7EB;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--tnt-darkest);
+            background: var(--tnt-white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: var(--tnt-darker);
+            color: var(--tnt-white);
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(77,101,255,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-top-bar {
+            background: var(--tnt-blue);
+            height: 4px;
+            width: 100%;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 40px 70px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 50px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .hero-brand .logo-text {
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--tnt-white);
+        }
+
+        .hero-brand .logo-accent {
+            width: 36px;
+            height: 3px;
+            background: var(--tnt-blue);
+            border-radius: 2px;
+        }
+
+        .hero-brand .logo-by {
+            font-size: 12px;
+            color: rgba(255,255,255,0.28);
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(77, 101, 255, 0.12);
+            border: 1px solid rgba(77, 101, 255, 0.3);
+            color: var(--tnt-blue-soft);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 100px;
+            margin-bottom: 28px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.15s forwards;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 52px;
+            font-weight: 300;
+            line-height: 1.15;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.3s forwards;
+        }
+
+        .hero h1 strong {
+            font-weight: 700;
+            color: var(--tnt-blue-soft);
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.55);
+            max-width: 640px;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.45s forwards;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.6s forwards;
+            flex-wrap: wrap;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hero-meta-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--tnt-blue-soft);
+        }
+
+        .hero-meta-value {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 400;
+        }
+
+        /* ===== FADE-IN ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== EDITORIAL ===== */
+        .editorial {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .editorial-label {
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--tnt-blue-deep);
+            margin-bottom: 20px;
+        }
+
+        .editorial h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 34px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-bottom: 28px;
+            color: var(--tnt-darkest);
+            line-height: 1.25;
+        }
+
+        .editorial p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: var(--tnt-gray);
+            margin-bottom: 22px;
+        }
+
+        .editorial p strong {
+            color: var(--tnt-darkest);
+            font-weight: 600;
+        }
+
+        .editorial-divider {
+            width: 48px;
+            height: 3px;
+            background: var(--tnt-blue);
+            border-radius: 2px;
+            margin: 48px 0;
+        }
+
+        /* ===== CANDIDATE CARDS ===== */
+        .candidates-section {
+            background: var(--tnt-light);
+            padding: 80px 0;
+        }
+
+        .candidates-header {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+            margin-bottom: 56px;
+        }
+
+        .candidates-header h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 34px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-bottom: 10px;
+        }
+
+        .candidates-header p {
+            font-size: 15px;
+            color: var(--tnt-gray);
+        }
+
+        .candidate-card {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 0 40px;
+        }
+
+        .card {
+            background: var(--tnt-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 32px rgba(0,0,0,0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 16px 48px rgba(0,0,0,0.11);
+        }
+
+        .card-top {
+            background: var(--tnt-darker);
+            padding: 36px 44px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .card-identity {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .card-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(77, 101, 255, 0.14);
+            border: 2px solid rgba(77, 101, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Oswald', sans-serif;
+            font-size: 19px;
+            font-weight: 600;
+            color: var(--tnt-blue-soft);
+            flex-shrink: 0;
+            letter-spacing: 1px;
+        }
+
+        .card-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--tnt-white);
+            letter-spacing: 0.5px;
+        }
+
+        .card-title {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
+        .card-meta-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .card-nickname {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--tnt-blue-soft);
+            background: rgba(77, 101, 255, 0.1);
+            border: 1px solid rgba(77, 101, 255, 0.22);
+            padding: 4px 12px;
+            border-radius: 100px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .card-location {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card-location::before {
+            content: '◎';
+            color: var(--tnt-blue-soft);
+            font-size: 11px;
+        }
+
+        .card-salary {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--tnt-blue-soft);
+            background: rgba(77, 101, 255, 0.1);
+            border: 1px solid rgba(77, 101, 255, 0.25);
+            padding: 5px 14px;
+            border-radius: 100px;
+        }
+
+        .card-body {
+            padding: 40px 44px 32px;
+        }
+
+        .card-narrative {
+            font-size: 15.5px;
+            line-height: 1.88;
+            color: var(--tnt-gray);
+            margin-bottom: 26px;
+        }
+
+        .card-narrative strong {
+            color: var(--tnt-darkest);
+            font-weight: 600;
+        }
+
+        /* ===== SIGNAL TAGS ===== */
+        .signal-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+
+        .signal-tag {
+            font-size: 11.5px;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 6px;
+            background: #F0FDF4;
+            color: #166534;
+            border: 1px solid #BBF7D0;
+        }
+
+        .signal-tag.blue {
+            background: rgba(77, 101, 255, 0.06);
+            color: var(--tnt-blue-deep);
+            border-color: rgba(77, 101, 255, 0.18);
+        }
+
+        .signal-tag.tnt {
+            background: rgba(77, 101, 255, 0.09);
+            color: #1a2c99;
+            border-color: rgba(77, 101, 255, 0.28);
+            font-weight: 700;
+        }
+
+        .signal-tag.amber {
+            background: #FFFBEB;
+            color: #92400E;
+            border-color: #FDE68A;
+        }
+
+        .signal-tag.gray {
+            background: #F9FAFB;
+            color: #374151;
+            border-color: #E5E7EB;
+        }
+
+        /* ===== STAT BOXES ===== */
+        .card-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-bottom: 0;
+        }
+
+        .stat-box {
+            background: var(--tnt-light);
+            border-radius: 10px;
+            padding: 16px 20px;
+        }
+
+        .stat-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--tnt-gray);
+            margin-bottom: 6px;
+        }
+
+        .stat-value {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--tnt-darkest);
+        }
+
+        /* ===== DOC LINKS ===== */
+        .doc-links {
+            border-top: 1px solid var(--tnt-gray-light);
+            padding: 20px 44px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .doc-links-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--tnt-gray);
+            margin-right: 6px;
+            white-space: nowrap;
+        }
+
+        .doc-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--tnt-dark);
+            text-decoration: none;
+            padding: 7px 14px;
+            border: 1.5px solid var(--tnt-gray-light);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .doc-link:hover {
+            border-color: var(--tnt-blue);
+            color: var(--tnt-blue);
+            background: rgba(77, 101, 255, 0.04);
+        }
+
+        .doc-link svg {
+            width: 13px;
+            height: 13px;
+            flex-shrink: 0;
+        }
+
+        .doc-link.primary {
+            background: var(--tnt-blue);
+            color: var(--tnt-white);
+            border-color: var(--tnt-blue);
+        }
+
+        .doc-link.primary:hover {
+            background: var(--tnt-blue-deep);
+            border-color: var(--tnt-blue-deep);
+        }
+
+        .doc-link.video {
+            background: #FFF7ED;
+            color: #9A3412;
+            border-color: #FED7AA;
+        }
+
+        .doc-link.video:hover {
+            background: #FFEDD5;
+            border-color: #FB923C;
+        }
+
+        .doc-link.dashboard {
+            background: #F0FDF4;
+            color: #166534;
+            border-color: #BBF7D0;
+        }
+
+        .doc-link.dashboard:hover {
+            background: #DCFCE7;
+            border-color: #4ADE80;
+        }
+
+        .doc-link.github {
+            background: #F8FAFC;
+            color: #1E293B;
+            border-color: #CBD5E1;
+        }
+
+        .doc-link.github:hover {
+            background: #F1F5F9;
+            border-color: #94A3B8;
+        }
+
+        .doc-link.pending {
+            color: var(--tnt-gray);
+            border-color: var(--tnt-gray-light);
+            cursor: default;
+            pointer-events: none;
+            opacity: 0.55;
+            background: #F9FAFB;
+        }
+
+        /* ===== CLOSING ===== */
+        .closing {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .closing h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 30px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-bottom: 20px;
+        }
+
+        .closing p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: var(--tnt-gray);
+            margin-bottom: 20px;
+        }
+
+        .closing p strong {
+            color: var(--tnt-darkest);
+        }
+
+        /* ===== TEAM ===== */
+        .team-section {
+            background: var(--tnt-light);
+            padding: 80px 0;
+        }
+
+        .team-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .team-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-bottom: 12px;
+        }
+
+        .team-subtitle {
+            font-size: 15px;
+            color: var(--tnt-gray);
+            max-width: 600px;
+            margin-bottom: 48px;
+            line-height: 1.7;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 56px;
+        }
+
+        .team-card {
+            background: var(--tnt-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 12px 36px rgba(0,0,0,0.1);
+        }
+
+        .team-card-top {
+            height: 200px;
+            overflow: hidden;
+            background: var(--tnt-darker);
+        }
+
+        .team-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        .team-card-body {
+            padding: 24px;
+        }
+
+        .team-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--tnt-darkest);
+            margin-bottom: 4px;
+            letter-spacing: 0.3px;
+        }
+
+        .team-role {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--tnt-blue-deep);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 9px;
+        }
+
+        .team-location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            color: var(--tnt-gray);
+            margin-bottom: 12px;
+        }
+
+        .team-bio {
+            font-size: 13.5px;
+            line-height: 1.7;
+            color: var(--tnt-gray);
+            margin-bottom: 16px;
+        }
+
+        .team-email {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--tnt-blue-deep);
+            text-decoration: none;
+        }
+
+        .team-email:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== SAGAN BLOCK ===== */
+        .sagan-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 32px;
+            background: var(--tnt-darker);
+            border-radius: 16px;
+            padding: 40px 44px;
+            color: var(--tnt-white);
+        }
+
+        .sagan-logo-mark {
+            width: 56px;
+            height: 56px;
+            background: var(--tnt-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--tnt-white);
+            flex-shrink: 0;
+        }
+
+        .sagan-text h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--tnt-white);
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+        }
+
+        .sagan-text p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .sagan-text p strong {
+            color: rgba(255,255,255,0.82);
+        }
+
+        .sagan-stats {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .sagan-stat {
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .sagan-stat strong {
+            color: var(--tnt-blue-soft);
+            font-weight: 700;
+        }
+
+        /* ===== FOOTER CTA ===== */
+        .footer-cta {
+            background: var(--tnt-darkest);
+            text-align: center;
+            padding: 80px 40px;
+            color: var(--tnt-white);
+        }
+
+        .footer-cta h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 38px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .footer-cta h2 strong {
+            font-weight: 700;
+        }
+
+        .footer-cta p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 36px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .footer-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--tnt-blue);
+            color: var(--tnt-white);
+            font-size: 14px;
+            font-weight: 700;
+            padding: 15px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.2s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-contact:hover {
+            background: var(--tnt-blue-deep);
+            transform: translateY(-1px);
+        }
+
+        .footer-bottom {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 2px;
+        }
+
+        .footer-note {
+            font-size: 12px;
+            color: rgba(255,255,255,0.18);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 34px; }
+            .hero-meta { gap: 24px; }
+            .hero-inner { padding: 40px 24px 50px; }
+            .card-top { flex-direction: column; gap: 20px; }
+            .card-meta-right { align-items: flex-start; }
+            .card-body, .card-top { padding: 28px; }
+            .doc-links { padding: 18px 28px; }
+            .card-stats { grid-template-columns: repeat(2, 1fr); }
+            .editorial, .closing { padding: 60px 24px; }
+            .candidate-card { padding: 0 16px; }
+            .candidates-header { padding: 0 16px; }
+            .team-grid { grid-template-columns: 1fr; }
+            .sagan-info { flex-direction: column; text-align: center; padding: 28px 24px; }
+            .sagan-stats { justify-content: center; }
+            .team-inner { padding: 0 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+    <div class="hero-top-bar"></div>
+    <div class="hero-inner">
+        <div class="hero-brand">
+            <span class="logo-text">TNT GROWTH</span>
+            <span class="logo-accent"></span>
+            <span class="logo-by">by Sagan White Glove</span>
+        </div>
+        <div class="hero-badge">Sagan White Glove &middot; Drop 1</div>
+        <h1>Your next<br><strong>Head of Data Analytics</strong><br>is in this shortlist.</h1>
+        <p class="hero-subtitle">Four candidates. All screened, all assessed. Each one has spent time in environments where broken pipelines and unreliable reporting were costing real money. BigQuery, Python, custom API extraction, team leadership. It's all here.</p>
+        <div class="hero-meta">
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Role</span>
+                <span class="hero-meta-value">Head of Data Analytics</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Candidates in Drop</span>
+                <span class="hero-meta-value">4</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Core Requirements</span>
+                <span class="hero-meta-value">BigQuery &middot; Python &middot; API ETL &middot; Team Lead</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Presented by</span>
+                <span class="hero-meta-value">Jesus Pacheco &middot; Sagan</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ===== EDITORIAL INTRO ===== -->
+<section class="editorial fade-in">
+    <div class="editorial-label">A note on selection</div>
+    <h2>Your AMs are fixing dashboards every morning. That's a missing person problem.</h2>
+    <p>
+        Funnel.io disconnects. Supermetrics pulls stale data. A client asks for last week's numbers and someone on your team loses two hours chasing it down. It looks like a tooling problem. <strong>It's not. It's a missing infrastructure layer, and one person can fix it.</strong>
+    </p>
+    <p>
+        You need someone who can build API extractors directly into BigQuery, own the pipeline end to end, and get your Account Managers out of the reporting weeds so they can do actual client work. You also have a junior analytics team sitting at 0.5 that needs to get to 1. That means a technical lead who can set standards, review work, and develop the people who report to them.
+    </p>
+    <p>
+        We looked for that exact combination: people who have automated manual reporting that was costing hours, built connectors that don't break when the platform updates, and led junior analysts toward something more capable. <strong>Not just data people who know SQL. People who have been the upgrade in an analytics org before.</strong>
+    </p>
+    <div class="editorial-divider"></div>
+    <p>
+        Every candidate in this shortlist went through a full process: application review, screening interview, and a hands-on technical assessment designed around TNT Growth's specific setup. What you're looking at is what made it through all of that. Your match is in here.
+    </p>
+</section>
+
+<!-- ===== CANDIDATES ===== -->
+<section class="candidates-section">
+    <div class="candidates-header fade-in">
+        <h2>The Shortlist</h2>
+        <p>Four candidates. Screened, assessed, and ready to interview. Each one brings something different to the table.</p>
+    </div>
+
+    <!-- ===== RAFAEL R. ===== -->
+    <div class="candidate-card fade-in">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">RR</div>
+                    <div>
+                        <div class="card-name">Rafael R.</div>
+                        <div class="card-title">Data &amp; Analytics Lead &middot; Performance Marketing &middot; Nicaragua / Colombia</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-nickname">The Unicorn</span>
+                    <span class="card-location">Nicaragua / Colombia</span>
+                    <span class="card-salary">$7,500 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Rafael started without a formal CS degree and ended up building exactly the kind of data infrastructure that most performance marketing agencies are still piecing together. He taught himself Python because the third-party connectors kept breaking, then built the extractors himself. That's not a workaround. <strong>That's the same problem you're trying to solve at TNT Growth right now, and he's already solved it.</strong>
+                </p>
+                <p class="card-narrative">
+                    He's grown analytics teams from 2 to 40 people and trained over 700 staff on data reporting and analytics workflows. He knows what it means to be the only technical person in a room full of marketers who just need the numbers to work, and he's built systems that made sure those people didn't have to ask him again.
+                </p>
+                <p class="card-narrative">
+                    His assessment for this role is a live GitHub dashboard. Real data. Clickable. Built specifically around performance marketing analytics. <strong>Not a deck, not a document. A working product.</strong> Click through it before you read anything else about him.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Python &middot; Custom API Extractors</span>
+                    <span class="signal-tag">BigQuery &middot; Data Pipelines</span>
+                    <span class="signal-tag">Performance Marketing Analytics</span>
+                    <span class="signal-tag tnt">Team 2 &rarr; 40 Analysts</span>
+                    <span class="signal-tag tnt">700+ Staff Trained</span>
+                    <span class="signal-tag blue">SQL &middot; Data Modeling</span>
+                    <span class="signal-tag blue">ETL / ELT Automation</span>
+                    <span class="signal-tag amber">Nicaragua / Colombia (UTC-5 / UTC-5)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Team Built</div>
+                        <div class="stat-value">2 &rarr; 40 analysts</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Staff Trained</div>
+                        <div class="stat-value">700+ people</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Assessment</div>
+                        <div class="stat-value">Live GitHub dashboard</div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-links">
+                <span class="doc-links-label">Materials</span>
+                <a href="https://drive.google.com/file/d/1rHx8OH2hdBPxTfM_7uHB5MqsChRHWLTo/view?usp=sharing" target="_blank" class="doc-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    Resume
+                </a>
+                <a href="https://drive.google.com/file/d/1Z65uZlXzBPyATRw8JqrTEENOuQFQbq1T/view?usp=sharing" target="_blank" class="doc-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                    Screening
+                </a>
+                <a href="https://drive.google.com/drive/folders/1mM5LX_7eZpoGN6LmxHZXc30C_YXrDr-s?usp=sharing" target="_blank" class="doc-link primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Assessment
+                </a>
+                <a href="https://rafaelreinoso.github.io/performance-marketing-analytics/" target="_blank" class="doc-link dashboard">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                    Live Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ANSELM N. ===== -->
+    <!-- NOTE: Assessment pending — using "Coming Soon" placeholder below -->
+    <div class="candidate-card fade-in">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">AN</div>
+                    <div>
+                        <div class="card-name">Anselm N.</div>
+                        <div class="card-title">Senior Data Scientist / BI Lead &middot; Banking &amp; Humanitarian Data &middot; Kenya</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-nickname">The Data Veteran</span>
+                    <span class="card-location">Kenya</span>
+                    <span class="card-salary">$6,500 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Anselm spent 15 years at Barclays and Absa Bank Kenya building the kind of data infrastructure that can't afford to be wrong. Financial services data has to be accurate, documented, auditable, and on time. He worked under that bar for a decade and a half, and it shows in how he approaches problems.
+                </p>
+                <p class="card-narrative">
+                    He drove KES 800 million in loan disbursements through ML models, which means he's built systems that make actual business decisions. He also automated 974 manual reports down to 182. <strong>That's an 81% reduction in reporting overhead, and that's exactly the kind of work your Account Managers need someone to do with your current reporting stack.</strong> He's now at UNHCR managing humanitarian data while finishing an MSc in Big Data Analytics at the University of East London.
+                </p>
+                <p class="card-narrative">
+                    BigQuery, Redshift, Python, Power BI, Tableau, Hadoop, Spark. His stack is current and production-proven, not just a list on a CV. He knows BigQuery well enough to model data that actually performs under scale. <strong>That matters a lot for where TNT is going.</strong>
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">BigQuery &middot; Redshift</span>
+                    <span class="signal-tag">Python &middot; SQL &middot; ML Models</span>
+                    <span class="signal-tag">Power BI &middot; Tableau</span>
+                    <span class="signal-tag tnt">974 &rarr; 182 Reports Automated</span>
+                    <span class="signal-tag tnt">KES 800M via ML</span>
+                    <span class="signal-tag blue">Hadoop &middot; Spark &middot; MLOps</span>
+                    <span class="signal-tag blue">Barclays &middot; Absa &middot; UNHCR</span>
+                    <span class="signal-tag amber">Kenya (UTC+3)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">15 years in data</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Reports Automated</div>
+                        <div class="stat-value">974 &rarr; 182</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Loan Disbursements</div>
+                        <div class="stat-value">KES 800M via ML</div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-links">
+                <span class="doc-links-label">Materials</span>
+                <a href="https://drive.google.com/file/d/1FQUj0113kbQbpLuvitbFTBW7p1FkcWOW/view?usp=sharing" target="_blank" class="doc-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    Resume
+                </a>
+                <a href="https://drive.google.com/file/d/1yksh8n7yNt3OH4CjA_yV5EeFJlsac6Hd/view" target="_blank" class="doc-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                    Screening
+                </a>
+                <a href="https://github.com/aanzaya?tab=repositories" target="_blank" class="doc-link github">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                    GitHub
+                </a>
+                <span class="doc-link pending">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Assessment &middot; Coming Soon
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== DAVID F. ===== -->
+    <!-- NOTE: Confirm David's salary — using $5,500/mo from intake context -->
+    <div class="candidate-card fade-in">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">DF</div>
+                    <div>
+                        <div class="card-name">David F.</div>
+                        <div class="card-title">Data Lead / Analytics Architect &middot; Enterprise Tech &middot; Brazil</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-nickname">The Strategic Architect</span>
+                    <span class="card-location">Brazil</span>
+                    <span class="card-salary">$5,500 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    David brings 15 years of data work with a CS degree and an MBA on top. He spent significant time at BairesDev, which means he's operated in fast-moving, client-facing technical environments where both delivery and communication have to be right. His academic background as a former professor means he can explain complex systems to people who don't build them, which matters a lot for an analytics lead working alongside non-technical Account Managers.
+                </p>
+                <p class="card-narrative">
+                    What makes David stand out is his 3-Layer Audit approach: before touching anything, he maps what exists, what's broken, and what's being built on top of it. <strong>For a company that has accumulated data debt across Funnel.io, Supermetrics, and whatever custom work your team has built over the years, that discipline prevents a new hire from making things worse while trying to fix them.</strong>
+                </p>
+                <p class="card-narrative">
+                    His assessment walks through exactly how he'd structure TNT's data infrastructure from day one. His intro video gives you a quick read on how he communicates. <strong>Read the assessment before the interview.</strong> It tells you more than the CV does.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">BigQuery &middot; Data Modeling</span>
+                    <span class="signal-tag">Python &middot; SQL &middot; ETL</span>
+                    <span class="signal-tag">CS + MBA Background</span>
+                    <span class="signal-tag tnt">3-Layer Audit Methodology</span>
+                    <span class="signal-tag tnt">15 Years Experience</span>
+                    <span class="signal-tag blue">BairesDev</span>
+                    <span class="signal-tag blue">Team Development</span>
+                    <span class="signal-tag amber">Brazil (UTC-3)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">15 years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Background</div>
+                        <div class="stat-value">CS + MBA</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Approach</div>
+                        <div class="stat-value">3-Layer Audit</div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-links">
+                <span class="doc-links-label">Materials</span>
+                <a href="https://docs.google.com/document/d/15WHFG9U9IzKGgEW8rubTX-ogaMUqkyO6lORIGKIFyng/edit?usp=sharing" target="_blank" class="doc-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    Resume
+                </a>
+                <a href="https://drive.google.com/file/d/1iCapEnNOaE_O6AFKaPkm3s6GQdC41XwT/view?usp=sharing" target="_blank" class="doc-link video">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                    Intro Video
+                </a>
+                <a href="https://drive.google.com/file/d/1vG7rqsSzHqQPBBx4uhs851I2t0zPDbJ2/view?usp=sharing" target="_blank" class="doc-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                    Screening
+                </a>
+                <a href="https://docs.google.com/document/d/1N42Wdv6zsjANesnauQQQUU6yxaGwZmAalCkV4RL73KQ/edit?usp=sharing" target="_blank" class="doc-link primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Assessment
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== JOSEPH W. ===== -->
+    <div class="candidate-card fade-in">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">JW</div>
+                    <div>
+                        <div class="card-name">Joseph W.</div>
+                        <div class="card-title">Data Engineer / Analytics Lead &middot; Civil Engineering Background &middot; Kenya</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-nickname">The Structural Specialist</span>
+                    <span class="card-location">Kenya</span>
+                    <span class="card-salary">$6,500 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Joseph came into data from civil engineering, which sounds like an odd path until you understand what civil engineers actually do: they design structures that carry load without collapsing. That's what Joseph does with data architecture. He thinks about foundations, lineage, and what happens to a pipeline when the source changes. <strong>He doesn't build things that break when Funnel.io has an outage. He builds things that account for the outage.</strong>
+                </p>
+                <p class="card-narrative">
+                    His DBT work is serious. He cares about documentation, about knowing where every number in a dashboard came from, about building transformation layers that your junior analysts can work inside without creating silent errors. He has a strong data integrity instinct, not as a personality quirk, as a professional standard. That's what makes the difference between a BigQuery setup that lasts two years and one that needs to be rebuilt every six months.
+                </p>
+                <p class="card-narrative">
+                    He submitted two videos: a general intro and a deeper dive into how he'd approach the role at TNT specifically. <strong>Watch the second one.</strong> It shows how he thinks when given a real problem to solve.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">DBT &middot; BigQuery</span>
+                    <span class="signal-tag">Data Lineage &middot; Data Modeling</span>
+                    <span class="signal-tag">Python &middot; SQL</span>
+                    <span class="signal-tag tnt">Data Integrity Focus</span>
+                    <span class="signal-tag tnt">Structural Thinker</span>
+                    <span class="signal-tag blue">ETL / ELT Pipelines</span>
+                    <span class="signal-tag blue">Analytics Engineering</span>
+                    <span class="signal-tag amber">Kenya (UTC+3)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Background</div>
+                        <div class="stat-value">Civil Eng &rarr; Data</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">DBT &middot; BigQuery &middot; Python</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Focus</div>
+                        <div class="stat-value">Lineage + integrity</div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-links">
+                <span class="doc-links-label">Materials</span>
+                <a href="https://drive.google.com/file/d/1w_5-JXmoTmNBYzva0-Re09Kv8K3HADAk/view?usp=sharing" target="_blank" class="doc-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    Resume
+                </a>
+                <a href="https://www.loom.com/share/509916341aee4404912f5da8e8684037" target="_blank" class="doc-link video">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                    Intro Video
+                </a>
+                <a href="https://drive.google.com/file/d/1fiCUa89RfiQ6QtQ05lfdJ7EB-zjXbdE3/view?usp=sharing" target="_blank" class="doc-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                    Screening
+                </a>
+                <a href="https://drive.google.com/file/d/1ETA7roraTde_eiqiCP-aGzBeR0SoVfn7/view?usp=sharing" target="_blank" class="doc-link primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Assessment
+                </a>
+                <a href="https://www.loom.com/share/c6b67823089c4d0f854a7d3157cc65e7" target="_blank" class="doc-link video">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                    Deep Dive
+                </a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- ===== CLOSING NOTE ===== -->
+<section class="closing fade-in">
+    <div class="editorial-label">What's next</div>
+    <h2>Let me know who you want to meet first.</h2>
+    <p>
+        All four are available and moving quickly. Tell me who you want to schedule and I'll have the interviews set up within 24 hours. Rafael's live dashboard is the fastest gut-check on fit, but all of them are worth the conversation.
+    </p>
+    <p>
+        <strong>One thing to note:</strong> Anselm's assessment is still coming in. I'll update this page and send you a note the moment it's in. The other three are fully ready to move right now.
+    </p>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section class="team-section fade-in">
+    <div class="team-inner">
+        <div class="editorial-label">Your Dedicated Team</div>
+        <h2>Meet the Recruiting Team</h2>
+        <p class="team-subtitle">This search is led by a dedicated team that understands your business and what a real fit looks like. Not just someone who can do the job, someone who can own it.</p>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-card-top">
+                    <img class="team-photo" src="https://saganrecruitment.com/wp-content/uploads/2025/10/Jesus-Pacheco.jpeg" alt="Jes&uacute;s Pacheco">
+                </div>
+                <div class="team-card-body">
+                    <div class="team-name">Jes&uacute;s Pacheco</div>
+                    <div class="team-role">Head of White Glove Hirings</div>
+                    <div class="team-location">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Mendoza, Argentina
+                    </div>
+                    <p class="team-bio">Leads the White Glove Hiring team at Sagan. MIT Supply Chain credential. Has placed candidates across data, marketing, and operations roles for US clients and built the process behind this shortlist.</p>
+                    <a href="mailto:jesus.p@getsagan.com" class="team-email">jesus.p@getsagan.com</a>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-card-top">
+                    <img class="team-photo" src="https://saganrecruitment.com/wp-content/uploads/2025/08/Manuel.webp" alt="Manuel Casta&ntilde;eda">
+                </div>
+                <div class="team-card-body">
+                    <div class="team-name">Manuel Casta&ntilde;eda</div>
+                    <div class="team-role">Recruitment Team Lead</div>
+                    <div class="team-location">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Bogot&aacute;, Colombia
+                    </div>
+                    <p class="team-bio">Manages Sagan's recruitment team. Has built hiring pipelines across data, engineering, marketing, and operations roles. Focused on getting the right person in the right seat, not just filling a position.</p>
+                    <a href="mailto:manuel.jaramillo@getsagan.com" class="team-email">manuel.jaramillo@getsagan.com</a>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-card-top">
+                    <img class="team-photo" src="https://saganrecruitment.com/wp-content/uploads/2025/08/Noel-Balderama.webp" alt="Noel Balderrama">
+                </div>
+                <div class="team-card-body">
+                    <div class="team-name">Noel Caleb Balderrama</div>
+                    <div class="team-role">Technical Recruiter</div>
+                    <div class="team-location">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Philippines
+                    </div>
+                    <p class="team-bio">Technical Recruiter with deep experience in sourcing and screening data and analytics talent. Runs the evaluation process that takes every candidate from application to presentation-ready.</p>
+                    <a href="mailto:noel.b@getsagan.com" class="team-email">noel.b@getsagan.com</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sagan-info">
+            <div class="sagan-logo-mark">S</div>
+            <div class="sagan-text">
+                <h3>Powered by Sagan</h3>
+                <p>Sagan connects professionals from <strong>Latin America, Africa, Asia, the Middle East, Central and Eastern Europe, and more</strong> with US companies. We run a curated, high-touch process from sourcing to placement, and stay accountable to the outcome on both sides.</p>
+                <div class="sagan-stats">
+                    <div class="sagan-stat"><strong>20,000</strong> Applications / Month</div>
+                    <div class="sagan-stat"><strong>2,000+</strong> Placements</div>
+                    <div class="sagan-stat"><strong>30+</strong> Countries</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER CTA ===== -->
+<section class="footer-cta fade-in">
+    <h2>Ready to <strong>get this role filled?</strong></h2>
+    <p>Tell me who you want to meet and I'll have the first interview scheduled within 24 hours.</p>
+    <a href="mailto:jesus.p@getsagan.com" class="footer-contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Contact Jesus &middot; Schedule Interviews
+    </a>
+    <div class="footer-bottom">
+        <div class="footer-logo">SAGAN</div>
+        <div class="footer-note">Prepared exclusively for TNT Growth &middot; February 2026</div>
+    </div>
+</section>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>
