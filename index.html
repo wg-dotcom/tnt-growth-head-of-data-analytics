@@ -6,17 +6,17 @@
     <title>Head of Data Analytics · TNT Growth | Sagan White Glove</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --tnt-blue: #4D65FF;
             --tnt-blue-soft: #8899FF;
             --tnt-blue-deep: #3A50E8;
-            --tnt-dark: #1C1F2E;
-            --tnt-darker: #141622;
-            --tnt-darkest: #0E1019;
+            --tnt-dark: #1A1A1A;
+            --tnt-darker: #0D0D0D;
+            --tnt-darkest: #000000;
             --tnt-white: #FFFFFF;
-            --tnt-light: #F5F6FF;
+            --tnt-light: #F4F4F4;
             --tnt-gray: #6B7280;
             --tnt-gray-light: #E5E7EB;
         }
@@ -25,7 +25,7 @@
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Geist', 'Montserrat', sans-serif;
             color: var(--tnt-darkest);
             background: var(--tnt-white);
             line-height: 1.6;
@@ -611,6 +611,11 @@
             margin-bottom: 56px;
         }
 
+        .team-grid--solo {
+            grid-template-columns: 380px;
+            justify-content: center;
+        }
+
         .team-card {
             background: var(--tnt-white);
             border-radius: 16px;
@@ -855,7 +860,7 @@
     <div class="hero-top-bar"></div>
     <div class="hero-inner">
         <div class="hero-brand">
-            <span class="logo-text">TNT GROWTH</span>
+            <img src="https://cdn.prod.website-files.com/678966b5244e488ac9fcfb6b/678966b5244e488ac9fcfb82_TNT%20Growth%20footer%20logo.svg" alt="TNT Growth" style="height:32px;filter:brightness(0) invert(1);">
             <span class="logo-accent"></span>
             <span class="logo-by">by Sagan White Glove</span>
         </div>
@@ -1232,7 +1237,7 @@
         <h2>Meet the Recruiting Team</h2>
         <p class="team-subtitle">This search is led by a dedicated team that understands your business and what a real fit looks like. Not just someone who can do the job, someone who can own it.</p>
 
-        <div class="team-grid">
+        <div class="team-grid team-grid--solo">
             <div class="team-card">
                 <div class="team-card-top">
                     <img class="team-photo" src="https://saganrecruitment.com/wp-content/uploads/2025/10/Jesus-Pacheco.jpeg" alt="Jes&uacute;s Pacheco">
@@ -1246,38 +1251,6 @@
                     </div>
                     <p class="team-bio">Leads the White Glove Hiring team at Sagan. MIT Supply Chain credential. Has placed candidates across data, marketing, and operations roles for US clients and built the process behind this shortlist.</p>
                     <a href="mailto:jesus.p@getsagan.com" class="team-email">jesus.p@getsagan.com</a>
-                </div>
-            </div>
-
-            <div class="team-card">
-                <div class="team-card-top">
-                    <img class="team-photo" src="https://saganrecruitment.com/wp-content/uploads/2025/08/Manuel.webp" alt="Manuel Casta&ntilde;eda">
-                </div>
-                <div class="team-card-body">
-                    <div class="team-name">Manuel Casta&ntilde;eda</div>
-                    <div class="team-role">Recruitment Team Lead</div>
-                    <div class="team-location">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        Bogot&aacute;, Colombia
-                    </div>
-                    <p class="team-bio">Manages Sagan's recruitment team. Has built hiring pipelines across data, engineering, marketing, and operations roles. Focused on getting the right person in the right seat, not just filling a position.</p>
-                    <a href="mailto:manuel.jaramillo@getsagan.com" class="team-email">manuel.jaramillo@getsagan.com</a>
-                </div>
-            </div>
-
-            <div class="team-card">
-                <div class="team-card-top">
-                    <img class="team-photo" src="https://saganrecruitment.com/wp-content/uploads/2025/08/Noel-Balderama.webp" alt="Noel Balderrama">
-                </div>
-                <div class="team-card-body">
-                    <div class="team-name">Noel Caleb Balderrama</div>
-                    <div class="team-role">Technical Recruiter</div>
-                    <div class="team-location">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        Philippines
-                    </div>
-                    <p class="team-bio">Technical Recruiter with deep experience in sourcing and screening data and analytics talent. Runs the evaluation process that takes every candidate from application to presentation-ready.</p>
-                    <a href="mailto:noel.b@getsagan.com" class="team-email">noel.b@getsagan.com</a>
                 </div>
             </div>
         </div>
