@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byrone — Head of Data Analytics | TNT Growth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: #f0f0f0; color: #1a1a1a; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .page { max-width: 820px; margin: 40px auto; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+
+        /* Header */
+        .header { background: #141414; padding: 44px 52px 38px; position: relative; }
+        .logo { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #EC5327; margin-bottom: 22px; }
+        .name { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 6px; letter-spacing: -0.3px; }
+        .headline { font-size: 14.5px; font-weight: 400; color: #94a3b8; margin-bottom: 20px; line-height: 1.5; }
+        .contact { display: flex; flex-wrap: wrap; gap: 18px; font-size: 12.5px; color: #94a3b8; }
+        .contact a { color: #94a3b8; text-decoration: none; transition: color 0.2s; }
+        .contact a:hover { color: #EC5327; }
+        .tnt-bar { height: 3px; background: #EC5327; position: absolute; bottom: 0; left: 0; right: 0; }
+
+        /* Body */
+        .body { padding: 38px 52px 48px; }
+
+        /* Sections */
+        .section { margin-bottom: 30px; }
+        .section:last-child { margin-bottom: 0; }
+        .section-label { font-size: 10.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #EC5327; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1.5px solid #e5e7eb; }
+
+        /* Summary */
+        .summary { font-size: 13.5px; color: #374151; line-height: 1.75; }
+
+        /* Jobs */
+        .job { margin-bottom: 24px; }
+        .job:last-child { margin-bottom: 0; }
+        .job-top { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 2px; }
+        .job-company { font-size: 14px; font-weight: 600; color: #111827; }
+        .job-role { font-weight: 400; color: #6b7280; }
+        .job-date { font-size: 12px; color: #6b7280; white-space: nowrap; }
+        .job-location { font-size: 12px; color: #9ca3af; margin-bottom: 8px; }
+        .job ul { padding-left: 18px; }
+        .job li { font-size: 13px; color: #374151; line-height: 1.65; margin-bottom: 4px; }
+        .job-desc { font-size: 13px; color: #374151; line-height: 1.65; margin-bottom: 8px; }
+
+        /* Education */
+        .edu { margin-bottom: 14px; }
+        .edu:last-child { margin-bottom: 0; }
+        .edu-top { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+        .edu-degree { font-size: 13.5px; font-weight: 600; color: #111827; }
+        .edu-date { font-size: 12px; color: #6b7280; }
+        .edu-school { font-size: 12.5px; color: #6b7280; }
+
+        /* Skills */
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .skill-item h4 { font-size: 12.5px; font-weight: 600; color: #111827; margin-bottom: 3px; }
+        .skill-item p { font-size: 12px; color: #6b7280; line-height: 1.55; }
+
+        /* Footer */
+        .footer { background: #141414; padding: 14px 52px; display: flex; justify-content: space-between; align-items: center; }
+        .footer .logo-sm { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #EC5327; }
+        .footer .conf { font-size: 9px; color: #475569; letter-spacing: 0.5px; }
+
+        /* Print */
+        @media print {
+            body { background: #fff; }
+            .page { margin: 0; box-shadow: none; }
+        }
+        @media (max-width: 640px) {
+            .header, .body, .footer { padding-left: 24px; padding-right: 24px; }
+            .name { font-size: 24px; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .contact { flex-direction: column; gap: 6px; }
+            .job-top, .edu-top { flex-direction: column; gap: 2px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="logo">Sagan White Glove</div>
+            <div class="name">Byrone</div>
+            <div class="headline">Business Intelligence Analyst Manager | Commercial Analytics &amp; Revenue Growth</div>
+            <div class="contact">
+                <span>Kenya</span>
+            </div>
+            <div class="tnt-bar"></div>
+        </div>
+
+        <div class="body">
+            <!-- Professional Summary -->
+            <div class="section">
+                <div class="section-label">Professional Summary</div>
+                <p class="summary">Commercial performance professional with 5+ years of experience driving revenue growth, margin optimization, and operational efficiency through advanced analytics. Skilled in translating commercial data into actionable insights, developing Power BI dashboards, and optimizing SQL-driven reporting for strategic decision-making. Background in Actuarial Science underpins a first-principles approach to building metrics from scratch. Experience spans pricing analysis, sales performance tracking, demand forecasting, and automated data pipelines.</p>
+            </div>
+
+            <!-- Experience -->
+            <div class="section">
+                <div class="section-label">Professional Experience</div>
+
+                <div class="job">
+                    <div class="job-top">
+                        <div class="job-company">Capwell Industries Limited <span class="job-role">| Business Intelligence Analyst Manager</span></div>
+                        <div class="job-date">June 2022 – Present</div>
+                    </div>
+                    <ul>
+                        <li>Drive pricing and margin analysis across channels and SKUs, identifying underperforming products and recommending pricing actions that improved gross margin performance.</li>
+                        <li>Monitor sales performance and channel health, producing weekly insights on volume trends, sell-out drivers, and customer-level performance to guide revenue decisions.</li>
+                        <li>Lead budgeting and forecasting cycles, partnering with finance and sales teams to build accurate OPEX/CAPEX budgets and quarterly demand forecasts.</li>
+                        <li>Lead the implementation and execution of Joint Business Plans (JBPs) with key retail partners, aligning on annual targets, negotiating commercial terms, and tracking performance KPIs (volume, visibility, OTIF).</li>
+                        <li>Develop automated Power BI dashboards integrating sales, pricing, supply chain, and financial KPIs.</li>
+                        <li>Analyze trade spend, promotions, and channel investments, providing ROI insights for optimization across General Trade, HORECAI, and Modern Trade.</li>
+                        <li>Run scenario and sensitivity analyses for pricing, promotions, and volume changes to support quarterly business reviews.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-top">
+                        <div class="job-company">Hallmark Marketing Company <span class="job-role">| Data Analyst</span></div>
+                        <div class="job-date">January 2020 – May 2022</div>
+                    </div>
+                    <ul>
+                        <li>Developed automated Power BI dashboards for sales and campaign performance, giving commercial teams real-time visibility and cutting manual reporting time.</li>
+                        <li>Built predictive demand and inventory models using Python, reducing stock-outs and improving product availability.</li>
+                        <li>Collaborated with finance, sales, and marketing to define commercial KPIs and standardized reporting templates.</li>
+                        <li>Integrated CRM, ERP, and marketing data sources for a unified view of customer behavior, channel performance, and retention trends.</li>
+                        <li>Partnered with supply chain teams to track OTIF, fill rates, and demand accuracy.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="section">
+                <div class="section-label">Education</div>
+                <div class="edu">
+                    <div class="edu-top">
+                        <div class="edu-degree">Bachelor of Science in Actuarial Science</div>
+                        <div class="edu-date">Second Class Honors (Upper Division)</div>
+                    </div>
+                    <div class="edu-school">Kisii University, Kenya</div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="section">
+                <div class="section-label">Skills</div>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h4>Commercial Analytics</h4>
+                        <p>Pricing analysis, sales performance tracking, margin analysis, channel performance reviews</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Financial Planning</h4>
+                        <p>Budgeting, forecasting, demand planning</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>BI &amp; Reporting</h4>
+                        <p>Power BI, Tableau, Advanced Excel</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Data &amp; Automation</h4>
+                        <p>SQL (Advanced), Python (Intermediate)</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Business Systems</h4>
+                        <p>SAP B1, ERP, Power Query</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Route-to-Market</h4>
+                        <p>OTIF, fill rates, distribution coverage, SKU availability</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span class="logo-sm">Sagan White Glove</span>
+            <span class="conf">Prepared exclusively for TNT Growth</span>
+        </div>
+    </div>
+</body>
+</html>
