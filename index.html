@@ -851,6 +851,99 @@
             .sagan-stats { justify-content: center; }
             .team-inner { padding: 0 24px; }
         }
+
+        /* ===== COMPARISON TABLE ===== */
+        .comparison-section {
+            background: var(--tnt-darkest);
+            padding: 80px 40px;
+        }
+        .comparison-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .comparison-section .editorial-label {
+            color: var(--tnt-orange);
+        }
+        .comparison-section h2 {
+            color: var(--tnt-white);
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 700;
+            margin: 8px 0 40px;
+        }
+        .comparison-table-wrap {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+        }
+        .comparison-table thead tr {
+            background: var(--tnt-orange);
+        }
+        .comparison-table thead th {
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            padding: 14px 18px;
+            text-align: left;
+            white-space: nowrap;
+        }
+        .comparison-table tbody tr {
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            transition: background 0.15s;
+        }
+        .comparison-table tbody tr:last-child {
+            border-bottom: none;
+        }
+        .comparison-table tbody tr:hover {
+            background: rgba(236,83,39,0.06);
+        }
+        .comparison-table td {
+            padding: 16px 18px;
+            color: var(--tnt-light);
+            vertical-align: middle;
+            background: var(--tnt-darker);
+        }
+        .comparison-table td:first-child {
+            font-weight: 700;
+            color: var(--tnt-white);
+            white-space: nowrap;
+        }
+        .comp-nickname {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--tnt-orange);
+            background: rgba(236,83,39,0.12);
+            border: 1px solid rgba(236,83,39,0.25);
+            border-radius: 20px;
+            padding: 2px 10px;
+            margin-top: 4px;
+            white-space: nowrap;
+        }
+        .comp-salary {
+            font-weight: 700;
+            color: var(--tnt-white);
+        }
+        .comp-stack {
+            color: var(--tnt-gray);
+            font-size: 0.82rem;
+            line-height: 1.6;
+        }
+        .comp-signal {
+            font-size: 0.82rem;
+            color: var(--tnt-light);
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .comparison-section { padding: 60px 24px; }
+        }
     </style>
 </head>
 <body>
@@ -1291,6 +1384,85 @@
             </div>
         </div>
     </div>
+
+
+<section class="comparison-section fade-in">
+    <div class="comparison-inner">
+        <div class="editorial-label">Side by side</div>
+        <h2>Candidate Comparison</h2>
+        <div class="comparison-table-wrap">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Candidate</th>
+                        <th>Location</th>
+                        <th>Salary</th>
+                        <th>Experience</th>
+                        <th>Core Stack</th>
+                        <th>Standout Signal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Rafael R.<br>
+                            <span class="comp-nickname">The Unicorn</span>
+                        </td>
+                        <td>Nicaragua / Colombia<br><span style="color:var(--tnt-gray);font-size:0.8rem;">UTC-6</span></td>
+                        <td><span class="comp-salary">$7,500</span></td>
+                        <td>8+ years</td>
+                        <td class="comp-stack">BigQuery &middot; Python &middot; SQL<br>Looker &middot; GA4 &middot; dbt</td>
+                        <td class="comp-signal">Built team 2&rarr;40 analysts. Trained 700+ staff. Live dashboard as assessment.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Anselm N.<br>
+                            <span class="comp-nickname">The Data Veteran</span>
+                        </td>
+                        <td>Kenya<br><span style="color:var(--tnt-gray);font-size:0.8rem;">UTC+3</span></td>
+                        <td><span class="comp-salary">$6,500</span></td>
+                        <td>15 years</td>
+                        <td class="comp-stack">BigQuery &middot; Redshift &middot; Python<br>Power BI &middot; Tableau &middot; Spark</td>
+                        <td class="comp-signal">974&rarr;182 reports automated (81% reduction). KES 800M loan disbursements via ML. Barclays &amp; Absa Bank.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            David F.<br>
+                            <span class="comp-nickname">The Strategic Architect</span>
+                        </td>
+                        <td>Brazil<br><span style="color:var(--tnt-gray);font-size:0.8rem;">UTC-3</span></td>
+                        <td><span class="comp-salary">$6,500</span></td>
+                        <td>15 years</td>
+                        <td class="comp-stack">Python &middot; SQL &middot; BigQuery<br>Power BI &middot; Tableau</td>
+                        <td class="comp-signal">3-Layer Audit methodology. CS degree + MBA. Former professor. BairesDev background.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Joseph W.<br>
+                            <span class="comp-nickname">The Structural Specialist</span>
+                        </td>
+                        <td>Kenya<br><span style="color:var(--tnt-gray);font-size:0.8rem;">UTC+3</span></td>
+                        <td><span class="comp-salary">$6,500</span></td>
+                        <td>6+ years</td>
+                        <td class="comp-stack">dbt &middot; BigQuery &middot; Python<br>SQL &middot; Airflow</td>
+                        <td class="comp-signal">Civil engineering background. Precision-first approach to data lineage and integrity.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Byrone O.<br>
+                            <span class="comp-nickname">The Commercial Builder</span>
+                        </td>
+                        <td>Kenya<br><span style="color:var(--tnt-gray);font-size:0.8rem;">UTC+3</span></td>
+                        <td><span class="comp-salary">$6,900</span></td>
+                        <td>5+ years</td>
+                        <td class="comp-stack">SQL &middot; Python &middot; Power BI<br>Google Sheets</td>
+                        <td class="comp-signal">Actuarial Science background. Pricing models + revenue analytics. First-principles metrics builder.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
 
 
 <section class="closing fade-in">
