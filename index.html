@@ -944,7 +944,45 @@
         @media (max-width: 768px) {
             .comparison-section { padding: 60px 24px; }
         }
-    </style>
+    
+        /* ── Tab Navigation ── */
+        .tab-nav {
+            display: flex;
+            gap: 0;
+            border-bottom: 2px solid var(--tnt-gray-light);
+            margin: 0 0 48px 0;
+            padding: 0 48px;
+        }
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 14px 28px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--tnt-gray);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        .tab-btn.active {
+            color: var(--tnt-orange);
+            border-bottom-color: var(--tnt-orange);
+        }
+        .tab-btn:hover:not(.active) {
+            color: var(--tnt-darker);
+        }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+        @media (max-width: 600px) {
+            .tab-nav { padding: 0 16px; }
+            .tab-btn { padding: 12px 16px; font-size: 0.78rem; }
+        }
+
+        </style>
 </head>
 <body>
 
@@ -1004,10 +1042,18 @@
 <section class="candidates-section">
     <div class="candidates-header fade-in">
         <h2>The Shortlist</h2>
-        <p>Four candidates. Screened, assessed, and ready to interview. Each one brings something different to the table.</p>
+        <p>Nine candidates across two batches. All screened, all assessed. Your next Head of Data Analytics is in here.</p>
     </div>
 
-    <!-- ===== RAFAEL R. ===== -->
+    <!-- Tab Nav -->
+    <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab('batch1', this)">Batch 1 &mdash; 5 Candidates</button>
+        <button class="tab-btn" onclick="switchTab('batch2', this)">Batch 2 &mdash; 4 Candidates</button>
+    </div>
+
+    <!-- Batch 1 -->
+    <div id="batch1" class="tab-panel active">
+<!-- ===== RAFAEL R. ===== -->
     <div class="candidate-card fade-in">
         <div class="card">
             <div class="card-top">
@@ -1080,8 +1126,7 @@
             </div>
         </div>
     </div>
-
-    <!-- ===== ANSELM N. ===== -->
+<!-- ===== ANSELM N. ===== -->
     <div class="candidate-card fade-in">
         <div class="card">
             <div class="card-top">
@@ -1154,8 +1199,7 @@
             </div>
         </div>
     </div>
-
-    <!-- ===== DAVID F. ===== -->
+<!-- ===== DAVID F. ===== -->
     <!-- David confirmed: $6,500/mo -->
     <div class="candidate-card fade-in">
         <div class="card">
@@ -1233,8 +1277,7 @@
             </div>
         </div>
     </div>
-
-    <!-- ===== JOSEPH W. ===== -->
+<!-- ===== JOSEPH W. ===== -->
     <div class="candidate-card fade-in">
         <div class="card">
             <div class="card-top">
@@ -1312,10 +1355,7 @@
         </div>
     </div>
 
-</section>
-
-<!-- ===== CLOSING NOTE ===== -->
-    <!-- ===== BYRONE O. ===== -->
+<!-- ===== BYRONE O. ===== -->
     <div class="candidate-card fade-in">
         <div class="card">
             <div class="card-top">
@@ -1462,11 +1502,12 @@
             </table>
         </div>
     </div>
-</section>
 
+    </div>
 
-
-    <!-- ===== PHELISA S. ===== -->
+    <!-- Batch 2 -->
+    <div id="batch2" class="tab-panel">
+<!-- ===== PHELISA S. ===== -->
     <div class="candidate-card fade-in">
         <div class="card">
             <div class="card-top">
@@ -1535,8 +1576,7 @@
             </div>
         </div>
     </div>
-
-    <!-- ===== MARCIA L. ===== -->
+<!-- ===== MARCIA L. ===== -->
     <div class="candidate-card fade-in">
         <div class="card">
             <div class="card-top">
@@ -1605,8 +1645,7 @@
             </div>
         </div>
     </div>
-
-    <!-- ===== JUAN PABLO A. ===== -->
+<!-- ===== JUAN PABLO A. ===== -->
     <div class="candidate-card fade-in">
         <div class="card">
             <div class="card-top">
@@ -1675,8 +1714,7 @@
             </div>
         </div>
     </div>
-
-    <!-- ===== ANTONIO P. ===== -->
+<!-- ===== ANTONIO P. ===== -->
     <div class="candidate-card fade-in">
         <div class="card">
             <div class="card-top">
@@ -1809,6 +1847,74 @@
         <div class="footer-logo">SAGAN</div>
         <div class="footer-note">Prepared exclusively for TNT Growth &middot; February 2026</div>
     </div>
+
+    </div>
+
+</section>
+
+<section class="closing fade-in">
+    <div class="editorial-label">What's next</div>
+    <h2>Let me know who you want to meet first.</h2>
+    <p>
+        All nine are available and moving quickly. Tell me who you want to schedule and I'll have the interviews set up within 24 hours. Rafael's live dashboard is the fastest gut-check on fit, but all of them are worth the conversation.
+    </p>
+    <p>
+        All nine candidates are fully packaged and ready. Each one has their resume, screening, and assessment in the links above.
+    </p>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section class="team-section fade-in">
+    <div class="team-inner">
+        <div class="editorial-label">Your Dedicated Team</div>
+        <h2>Meet the Recruiting Team</h2>
+        <p class="team-subtitle">This search is led by a dedicated team that understands your business and what a real fit looks like. Not just someone who can do the job, someone who can own it.</p>
+
+        <div class="team-grid team-grid--solo">
+            <div class="team-card">
+                <div class="team-card-top">
+                    <img class="team-photo" src="https://saganrecruitment.com/wp-content/uploads/2025/10/Jesus-Pacheco.jpeg" alt="Jes&uacute;s Pacheco">
+                </div>
+                <div class="team-card-body">
+                    <div class="team-name">Jes&uacute;s Pacheco</div>
+                    <div class="team-role">Head of White Glove Hirings</div>
+                    <div class="team-location">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Mendoza, Argentina
+                    </div>
+                    <p class="team-bio">Leads the White Glove Hiring team at Sagan. MIT Supply Chain credential. Has placed candidates across data, marketing, and operations roles for US clients and built the process behind this shortlist.</p>
+                    <a href="mailto:jesus.p@getsagan.com" class="team-email">jesus.p@getsagan.com</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sagan-info">
+            <div class="sagan-logo-mark">S</div>
+            <div class="sagan-text">
+                <h3>Powered by Sagan</h3>
+                <p>Sagan connects professionals from <strong>Latin America, Africa, Asia, the Middle East, Central and Eastern Europe, and more</strong> with US companies. We run a curated, high-touch process from sourcing to placement, and stay accountable to the outcome on both sides.</p>
+                <div class="sagan-stats">
+                    <div class="sagan-stat"><strong>20,000</strong> Applications / Month</div>
+                    <div class="sagan-stat"><strong>2,000+</strong> Placements</div>
+                    <div class="sagan-stat"><strong>30+</strong> Countries</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER CTA ===== -->
+<section class="footer-cta fade-in">
+    <h2>Ready to <strong>get this role filled?</strong></h2>
+    <p>Tell me who you want to meet and I'll have the first interview scheduled within 24 hours.</p>
+    <a href="mailto:jesus.p@getsagan.com" class="footer-contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Contact Jesus &middot; Schedule Interviews
+    </a>
+    <div class="footer-bottom">
+        <div class="footer-logo">SAGAN</div>
+        <div class="footer-note">Prepared exclusively for TNT Growth &middot; February 2026</div>
+    </div>
 </section>
 
 <script>
@@ -1828,5 +1934,14 @@
     });
 </script>
 
+
+    <script>
+    function switchTab(id, btn) {
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        btn.classList.add('active');
+    }
+    </script>
 </body>
 </html>
