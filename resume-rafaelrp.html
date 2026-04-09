@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafael — Head of Data Analytics | TNT Growth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: #f0f0f0; color: #1a1a1a; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .page { max-width: 820px; margin: 40px auto; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+
+        /* Header */
+        .header { background: #141414; padding: 44px 52px 38px; position: relative; }
+        .logo { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #EC5327; margin-bottom: 22px; }
+        .name { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 6px; letter-spacing: -0.3px; }
+        .headline { font-size: 14.5px; font-weight: 400; color: #94a3b8; margin-bottom: 20px; line-height: 1.5; }
+        .contact { display: flex; flex-wrap: wrap; gap: 18px; font-size: 12.5px; color: #94a3b8; }
+        .contact a { color: #94a3b8; text-decoration: none; transition: color 0.2s; }
+        .contact a:hover { color: #EC5327; }
+        .tnt-bar { height: 3px; background: #EC5327; position: absolute; bottom: 0; left: 0; right: 0; }
+
+        /* Body */
+        .body { padding: 38px 52px 48px; }
+
+        /* Sections */
+        .section { margin-bottom: 30px; }
+        .section:last-child { margin-bottom: 0; }
+        .section-label { font-size: 10.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #EC5327; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1.5px solid #e5e7eb; }
+
+        /* Summary */
+        .summary { font-size: 13.5px; color: #374151; line-height: 1.75; }
+
+        /* Jobs */
+        .job { margin-bottom: 24px; }
+        .job:last-child { margin-bottom: 0; }
+        .job-top { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 2px; }
+        .job-company { font-size: 14px; font-weight: 600; color: #111827; }
+        .job-role { font-weight: 400; color: #6b7280; }
+        .job-date { font-size: 12px; color: #6b7280; white-space: nowrap; }
+        .job-location { font-size: 12px; color: #9ca3af; margin-bottom: 8px; }
+        .job ul { padding-left: 18px; }
+        .job li { font-size: 13px; color: #374151; line-height: 1.65; margin-bottom: 4px; }
+        .job-desc { font-size: 13px; color: #374151; line-height: 1.65; margin-bottom: 8px; }
+
+        /* Education */
+        .edu { margin-bottom: 14px; }
+        .edu:last-child { margin-bottom: 0; }
+        .edu-top { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+        .edu-degree { font-size: 13.5px; font-weight: 600; color: #111827; }
+        .edu-date { font-size: 12px; color: #6b7280; }
+        .edu-school { font-size: 12.5px; color: #6b7280; }
+
+        /* Skills */
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .skill-item h4 { font-size: 12.5px; font-weight: 600; color: #111827; margin-bottom: 3px; }
+        .skill-item p { font-size: 12px; color: #6b7280; line-height: 1.55; }
+
+        /* Footer */
+        .footer { background: #141414; padding: 14px 52px; display: flex; justify-content: space-between; align-items: center; }
+        .footer .logo-sm { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #EC5327; }
+        .footer .conf { font-size: 9px; color: #475569; letter-spacing: 0.5px; }
+
+        /* Print */
+        @media print {
+            body { background: #fff; }
+            .page { margin: 0; box-shadow: none; }
+        }
+        @media (max-width: 640px) {
+            .header, .body, .footer { padding-left: 24px; padding-right: 24px; }
+            .name { font-size: 24px; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .contact { flex-direction: column; gap: 6px; }
+            .job-top, .edu-top { flex-direction: column; gap: 2px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="logo">Sagan White Glove</div>
+            <div class="name">Rafael Pereira</div>
+            <div class="headline">Data &amp; Analytics Leader | Operations &amp; LATAM Analytics</div>
+            <div class="contact">
+                <span>Brazil</span>
+            </div>
+            <div class="tnt-bar"></div>
+        </div>
+
+        <div class="body">
+            <!-- Professional Summary -->
+            <div class="section">
+                <div class="section-label">Professional Summary</div>
+                <p class="summary">Data &amp; Analytics Leader with 10+ years of experience at major multinationals (Mercado Livre, British American Tobacco, JDE), building analytics capabilities from scratch, designing core business metrics, and delivering data infrastructure that drives strategic decisions. Proven hands-on builder: predictive models, automated pipelines, KPI frameworks, and executive dashboards that replaced manual processes and scaled across multiple markets. Technical expertise in SQL (BigQuery), Python, Looker, Power BI, and R. MBA in Data Science &amp; Analytics from USP. Fluent English, advanced Spanish.</p>
+            </div>
+
+            <!-- Experience -->
+            <div class="section">
+                <div class="section-label">Professional Experience</div>
+
+                <div class="job">
+                    <div class="job-top">
+                        <div class="job-company">Mercado Livre <span class="job-role">| Analytics &amp; Planning Manager</span></div>
+                        <div class="job-date">Jun 2022 – Mar 2025</div>
+                    </div>
+                    <div class="job-location">São Paulo</div>
+                    <ul>
+                        <li>Built analytics capabilities end-to-end for the LATAM operations network (Brazil, Mexico, Argentina, Chile, Colombia) — designed core metrics, constructed data pipelines, and established analytical infrastructure consumed by VP and C-level stakeholders for strategic decisions.</li>
+                        <li>Developed a predictive model from scratch in Python and SQL with automated database integration, covering short-term (daily/hourly) and long-term horizons — replaced a manual spreadsheet-driven process with a scalable data-driven system across 5 countries.</li>
+                        <li>Designed and governed KPI frameworks for operational performance across LATAM — defined metrics from first principles, ensured data consistency and reliability.</li>
+                        <li>Built and maintained executive dashboards in Power BI and Looker consumed by senior leadership for CAPEX and expansion planning — owned full cycle from data model design to visualization and stakeholder enablement.</li>
+                        <li>Led automation of manual reporting workflows, eliminating recurring bottlenecks and improving data reliability.</li>
+                        <li>Managed and developed a multidisciplinary analytics team across the regional planning organisation.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-top">
+                        <div class="job-company">Hendrix Genetics <span class="job-role">| Analytics &amp; S&amp;OP Lead</span></div>
+                        <div class="job-date">Dec 2020 – Jun 2022</div>
+                    </div>
+                    <div class="job-location">São Paulo</div>
+                    <ul>
+                        <li>Built end-to-end analytics infrastructure from scratch in a high-complexity global environment — designed data models, established KPI frameworks, and ensured data visibility to HQ during simultaneous crises (COVID-19, Russia-Ukraine war, avian flu in Europe).</li>
+                        <li>Developed Excel/VBA tools for production planning and risk analytics, improving forecast accuracy and sustaining 10%+ year-on-year volume growth.</li>
+                        <li>Created a demand prioritisation methodology using ABC analysis, supporting revenue growth and cost reduction decisions.</li>
+                        <li>Led multi-scenario analytics for market expansion into Asia and Africa — built contingency models from first principles enabling new market entry while sustaining customer satisfaction KPIs.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-top">
+                        <div class="job-company">Jacobs Douwe Egberts (JDE) <span class="job-role">| Business Analytics Specialist</span></div>
+                        <div class="job-date">Nov 2018 – Dec 2020</div>
+                    </div>
+                    <div class="job-location">São Paulo</div>
+                    <ul>
+                        <li>Redesigned data flows, reporting cadences, and governance frameworks across planning cycles — replaced fragmented manual spreadsheet processes with a structured, documented analytics operation.</li>
+                        <li>Developed statistical models in Excel/VBA incorporating seasonality analysis and Nielsen market data, improving forecast accuracy and commercial risk management.</li>
+                        <li>Automated management reports in Power BI with daily and weekly refresh cycles, increasing KPI visibility at VP and global HQ level.</li>
+                        <li>Established documentation standards and best practices adopted across Marketing, Finance, Commercial, and Operations.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-top">
+                        <div class="job-company">British American Tobacco <span class="job-role">| Senior Analytics &amp; Demand Planning Analyst</span></div>
+                        <div class="job-date">Aug 2016 – Nov 2018</div>
+                    </div>
+                    <div class="job-location">Rio de Janeiro</div>
+                    <ul>
+                        <li>Led demand analytics for Brazil and Cuba, managing 200+ SKUs and 30 distribution centres across a 36-month planning horizon.</li>
+                        <li>Built Excel/VBA analytics tools automating data connectivity across SKUs and distribution centres.</li>
+                        <li>Partnered with Finance to reconcile demand data with budgetary objectives and support budget compliance.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-top">
+                        <div class="job-company">British American Tobacco <span class="job-role">| Earlier Experience</span></div>
+                        <div class="job-date">2011 – 2016</div>
+                    </div>
+                    <ul>
+                        <li><strong>Marketing Analyst (2015–2016):</strong> Analysed brand and market performance data, providing data-driven strategic support.</li>
+                        <li><strong>Strategy &amp; Planning Intern (2011–2013):</strong> Supported monthly business reporting across the Americas region.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="section">
+                <div class="section-label">Education</div>
+                <div class="edu">
+                    <div class="edu-top">
+                        <div class="edu-degree">MBA in Data Science &amp; Analytics</div>
+                        <div class="edu-date">2020 – 2022</div>
+                    </div>
+                    <div class="edu-school">USP (Universidade de São Paulo)</div>
+                </div>
+                <div class="edu">
+                    <div class="edu-top">
+                        <div class="edu-degree">BSc in Economics</div>
+                    </div>
+                    <div class="edu-school">UFRJ (Universidade Federal do Rio de Janeiro)</div>
+                </div>
+                <div class="edu">
+                    <div class="edu-top">
+                        <div class="edu-degree">Certifications</div>
+                    </div>
+                    <div class="edu-school">SQL for Google BigQuery &middot; Power BI Specialisation &middot; Linear Regression in R &middot; Excel and VBA (Udemy, DATAB &amp; USP)</div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="section">
+                <div class="section-label">Skills</div>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h4>Analytics &amp; Data</h4>
+                        <p>SQL (BigQuery — Advanced), Python, R, Excel/VBA, Looker, Power BI, Tableau</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Analytics Leadership</h4>
+                        <p>KPI Design &amp; Governance, Metrics Architecture, Predictive Modelling, Pipeline Automation, Data Infrastructure, People Management, Stakeholder Enablement</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Business Domains</h4>
+                        <p>Operations Analytics, Supply Chain, Demand Planning, Commercial Performance, FMCG</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Business Systems</h4>
+                        <p>SAP, JIRA, Google Workspace</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Languages</h4>
+                        <p>Portuguese (Native), English (Fluent), Spanish (Advanced)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span class="logo-sm">Sagan White Glove</span>
+            <span class="conf">Prepared exclusively for TNT Growth</span>
+        </div>
+    </div>
+</body>
+</html>
